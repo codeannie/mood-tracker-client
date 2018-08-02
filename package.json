@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^3.5.3",
     "axios": "^0.18.0",
     "date-fns": "^1.29.0",
     "js-cookie": "^2.2.0",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "redux": "^3.7.2"
@@ -24,13 +23,13 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-equimper": "^2.2.2",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
     "jest": "^22.4.3",
     "jest-cli": "^22.4.3",
-    "react-test-renderer": "^16.3.1"
+    "react-test-renderer": "^16.4.2"
   }
 }
