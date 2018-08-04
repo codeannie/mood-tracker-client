@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Button, Input } from 'antd';
+import LandingNavBtns from './landing-navBtns.component';
 
 export default class SignUpForm extends React.Component {
   constructor(props) {
@@ -20,38 +20,42 @@ export default class SignUpForm extends React.Component {
 
   render() {
     return (
-      <form className="signUpForm" onSubmit={this.handleSubmit}>
-        <label htmlFor="firstName">
+      <div className="signUpForm-container">
+        <LandingNavBtns />
+
+        <form className="signUpForm" onSubmit={this.handleSubmit}>
+          <label htmlFor="firstName">
           First Name:
-          <input 
-            type="text"
-            name="firstName"
-            placeholder="Enter your first name"
-          />
-        </label>
+            <input 
+              type="text"
+              name="firstName"
+              placeholder="Enter your first name"
+            />
+          </label>
 
-        <label htmlFor="email">
+          <label htmlFor="email">
           E-Mail:
-          <input 
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-          />
-        </label>
+            <input 
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+            />
+          </label>
 
-        <label htmlFor="password">
+          <label htmlFor="password">
           Password:
-          <input 
-            type="password"
-            name="password"
-            placeholder="Enter your password"
-          />
-        </label>
+            <input 
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+          </label>
 
-        <button type="submit"> Sign Up</button>
-        <button> Cancel </button> 
+          <button type="submit"> Sign Up</button>
+          <button> Cancel </button> 
 
-      </form>
+        </form>
+      </div>
     );
   }
 }

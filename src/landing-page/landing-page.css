@@ -13,15 +13,3 @@
   align-self: center;
   margin: auto;
 }
-
-.signUpForm, .loginForm {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-}
-
-label {
-  align-self: flex-start;
-  padding: 7px;
-}
-

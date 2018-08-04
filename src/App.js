@@ -13,19 +13,6 @@ class App extends Component {
       <Router>
         {/* <LandingPage /> */}
         <div className="App">
-          <div className="nav-buttons">
-            <ul>
-              <li>
-                <Link to="/"> Home </Link>
-              </li>
-              <li>
-                <Link to="signup"> Sign Up </Link>
-              </li>
-              <li>
-                <Link to="login"> Login </Link>
-              </li>
-            </ul>
-          </div>
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/signup" component={SignUpForm} />
           <Route exact path="/login" component={LoginForm} />
