@@ -4,12 +4,12 @@ import MOODS from '../enums/mood.constants';
 export default class MoodForm extends React.Component {
   constructor(props) {
     super(props);
-    this.setState = {
+    this.state = {
       mood: '',
       notes: '',
     };
     
-    this.handleChange = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -21,12 +21,14 @@ export default class MoodForm extends React.Component {
     this.setState(({
       [name]: value,
     }));
+
+    console.log('state on change ->', this.state);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     // do something to sent to API
-    console.log('state ->', this.state);
+    console.log('state on submit ->', this.state);
   }
 
   render() {
@@ -35,8 +37,8 @@ export default class MoodForm extends React.Component {
         <form className="moodForm" onSubmit={this.handleSubmit}>
           <label htmlFor="mood">
           Current Mood:
-            <select onChange={this.handleChange}>
-              {/* <select value={this.state.mood} onChange={this.handleChange}> */}
+            {/* <select onChange={this.handleChange}> */}
+            <select value={this.state.mood} onChange={this.handleChange}>
               <option value={MOODS.NORMAL.id} > {MOODS.NORMAL.label} </option>
               <option value={MOODS.HAPPY.id} > {MOODS.HAPPY.label} </option>
               <option value={MOODS.PRODUCTIVE.id} > {MOODS.PRODUCTIVE.label} </option>
@@ -50,7 +52,7 @@ export default class MoodForm extends React.Component {
           </label>
           <label htmlFor="notes">
             <textarea 
-              // value={this.state.notes}
+              value={this.state.notes}
               onChange={this.handleChange} 
             />
           </label>
