@@ -21,9 +21,7 @@ export default class MoodForm extends React.Component {
     const moodOptions = [];
 
     for (const key in MOODS) {
-      // console.log('key?', key);
-      // console.log('moods[key]', MOODS[key].id);
-      const moodOption = <option data-name={MOODS[key].label} value={MOODS[key].id}> {MOODS[key].label} </option>;
+      const moodOption = `<option data-name=${MOODS[key].label} value=${MOODS[key].id}> ${MOODS[key].label} </option>`;
       moodOptions.push(moodOption);
       console.log('mood options', moodOptions);
     }
@@ -57,14 +55,6 @@ export default class MoodForm extends React.Component {
           Current Mood:
             <select value={this.state.mood} onChange={this.handleMoodChange}>
               {this.generateMoodOptions()}
-              {/* <option value={MOODS.NORMAL.id} > {MOODS.NORMAL.label} </option>
-              <option value={MOODS.HAPPY.id} > {MOODS.HAPPY.label} </option>
-              <option value={MOODS.PRODUCTIVE.id} > {MOODS.PRODUCTIVE.label} </option>
-              <option value={MOODS.ANNOYED.id} > {MOODS.ANNOYED.label} </option>
-              <option value={MOODS.SAD.id} > {MOODS.SAD.label} </option>
-              <option value={MOODS.STRESSED.id} > {MOODS.STRESSED.label} </option>
-              <option value={MOODS.SICK.id} > {MOODS.SICK.label} </option>
-              <option value={MOODS.ANGRY.id} > {MOODS.ANGRY.label} </option> */}
             </select>
 
           </label>
