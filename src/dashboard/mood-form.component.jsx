@@ -13,18 +13,20 @@ export default class MoodForm extends React.Component {
       notes: '',
     };
     
-    this.generateMoodOptions = this.generateMoodOptions.bind(this);
     this.handleChange = this.handleMoodChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  generateMoodOptions() {
+  generateMoodOptions = () => {
     const moodOptions = [];
-    const moodKeys = Object.keys(MOODS);
-    console.log('mood keys ->', moodKeys);
-    // need to loop through object to generate list of options
-    const moodOption = <option data-name={moodKeys.label} value={moodKeys.id}> {moodKeys.label} </option>;
-    moodOptions.push(moodOption);
+
+    for (const key in MOODS) {
+      // console.log('key?', key);
+      // console.log('moods[key]', MOODS[key].id);
+      const moodOption = <option data-name={MOODS[key].label} value={MOODS[key].id}> {MOODS[key].label} </option>;
+      moodOptions.push(moodOption);
+      console.log('mood options', moodOptions);
+    }
   }
 
   handleMoodChange(e) {
@@ -54,7 +56,7 @@ export default class MoodForm extends React.Component {
           <label htmlFor="mood">
           Current Mood:
             <select value={this.state.mood} onChange={this.handleMoodChange}>
-              {this.generateMoodOptions}
+              {this.generateMoodOptions()}
               {/* <option value={MOODS.NORMAL.id} > {MOODS.NORMAL.label} </option>
               <option value={MOODS.HAPPY.id} > {MOODS.HAPPY.label} </option>
               <option value={MOODS.PRODUCTIVE.id} > {MOODS.PRODUCTIVE.label} </option>
