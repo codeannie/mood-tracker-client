@@ -5,10 +5,10 @@ export default class MoodForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {   
-      // capture selected mood?
+      // set default mood?
       mood: {
-        id: '',
-        label: '',
+        id: MOODS.NORMAL.id,
+        label: MOODS.NORMAL.label,
       },
       notes: '',
     };
@@ -21,7 +21,7 @@ export default class MoodForm extends React.Component {
     const moodOptions = [];
     
     for (const key in MOODS) {
-      const moodOption = <option data-name={MOODS[key].label} value={MOODS[key].id}> {MOODS[key].label} </option>;
+      const moodOption = <option data-label={MOODS[key].label} key={MOODS[key].id} value={MOODS[key].id}> {MOODS[key].label} </option>;
       moodOptions.push(moodOption);
     }
     console.log('mood options ->', moodOptions);
@@ -31,18 +31,26 @@ export default class MoodForm extends React.Component {
     return moodOptions;
   }
 
-  handleMoodChange(e) {
-    const id = e.target.data.id;
-    const label = e.target.data.name;
-    console.log('id change', id);
-    console.log('label', label);
+  // generateMoods = () => {
+  //   Object.keys(MOODS).map(key => (
+  //     <option value={MOODS[key].id}>{MOODS[key].label}</option>
+  //   ));
+  // }
 
-    this.setState(({
+  handleMoodChange(e) {
+    // const { mood } = this.state;
+    const id = e.target.value;
+    // const label = e.currentTarget.data.label;
+    console.log('id change', id);
+    console.log('label', e.target.dataset.label);
+
+    this.setState({
       mood: {
+        // ...mood,
         id,
-        label,
+        // label,
       },
-    }));
+    });
 
     console.log('state on change ->', this.state);
   }
@@ -67,6 +75,7 @@ export default class MoodForm extends React.Component {
           Current Mood:
             <select value={this.state.mood} onChange={this.handleMoodChange}>
               {this.generateMoodOptions()}
+              {/* {this.generateMoods()} */}
               {/* {generateMoods} */}
             </select>
 
