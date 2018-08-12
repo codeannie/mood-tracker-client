@@ -19,12 +19,13 @@ export default class MoodForm extends React.Component {
 
   generateMoodOptions = () => {
     const moodOptions = [];
-
+    
     for (const key in MOODS) {
       const moodOption = `<option data-name=${MOODS[key].label} value=${MOODS[key].id}> ${MOODS[key].label} </option>`;
       moodOptions.push(moodOption);
-      console.log('mood options', moodOptions);
     }
+    console.log('mood options ->', moodOptions);
+    return moodOptions;
   }
 
   handleMoodChange(e) {
@@ -55,6 +56,9 @@ export default class MoodForm extends React.Component {
           Current Mood:
             <select value={this.state.mood} onChange={this.handleMoodChange}>
               {this.generateMoodOptions()}
+              {/* {Object.keys(MOODS).map(key => (
+                <option value={MOODS[key].id}>{MOODS[key].label}</option>
+              ))} */}
             </select>
 
           </label>
