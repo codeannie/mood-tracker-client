@@ -40,15 +40,18 @@ export default class MoodForm extends React.Component {
   handleMoodChange(e) {
     // const { mood } = this.state;
     const id = e.target.value;
-    // const label = e.currentTarget.data.label;
+    const selectedIndex = e.currentTarget.selectedIndex;
+    const selectedOption = e.currentTarget.options[selectedIndex];
+    const label = selectedOption.dataset.label;
+
     console.log('id change', id);
-    console.log('label', e.target.dataset.label);
+    console.log('label', label);
 
     this.setState({
       mood: {
         // ...mood,
         id,
-        // label,
+        label,
       },
     });
 
