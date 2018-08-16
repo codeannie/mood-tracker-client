@@ -13,7 +13,7 @@ export default class MoodForm extends React.Component {
       notes: '',
     };
     
-    this.handleChange = this.handleMoodChange.bind(this);
+    this.handleMoodChange = this.handleMoodChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
