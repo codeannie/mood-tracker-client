@@ -59,6 +59,16 @@ export default class MoodForm extends React.Component {
   }
 
   // add separate handlechange for text area
+  handleNotesChange = (e) => {
+    const { notes } = this.state;
+    console.log('text area input', e.target.value);
+    this.setState({
+      ...notes,
+      notes: e.target.value,
+    });
+    console.log('state on change ->', this.state);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     // do something to sent to API
@@ -74,7 +84,7 @@ export default class MoodForm extends React.Component {
     return (
       <div className="moodForm-container">
         <form className="moodForm" onSubmit={this.handleSubmit}>
-          <label htmlFor="mood">
+          <label htmlFor="mood"> 
           Current Mood:
             <select value={this.state.mood} onChange={this.handleMoodChange}>
               {this.generateMoodOptions()}
@@ -86,7 +96,7 @@ export default class MoodForm extends React.Component {
           <label htmlFor="notes">
             <textarea 
               value={this.state.notes}
-              // onChange={this.handleChange} 
+              onChange={this.handleChange} 
             />
           </label>
 
