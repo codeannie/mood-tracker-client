@@ -96,7 +96,7 @@ export default class MoodForm extends React.Component {
           <label htmlFor="notes">
             <textarea 
               value={this.state.notes}
-              onChange={this.handleChange} 
+              onChange={this.handleNotesChange} 
             />
           </label>
 
